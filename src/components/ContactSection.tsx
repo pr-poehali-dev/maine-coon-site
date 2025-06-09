@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
 const ContactSection = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   const contactInfo = [
     {
       icon: "Phone",
@@ -30,7 +37,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-darker">
+    <section id="contact" className="py-20 bg-darker">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
@@ -83,6 +90,17 @@ const ContactSection = () => {
           <Button className="bg-orange hover:bg-orange-light text-white px-8 py-3 text-lg font-semibold transition-all duration-300">
             <Icon name="MessageCircle" className="mr-2" size={20} />
             Написать нам
+          </Button>
+        </div>
+
+        <div className="text-center mt-12">
+          <Button
+            variant="outline"
+            onClick={scrollToTop}
+            className="border-orange text-orange hover:bg-orange hover:text-white transition-all duration-300"
+          >
+            <Icon name="ArrowUp" className="mr-2" size={20} />
+            Наверх
           </Button>
         </div>
       </div>
